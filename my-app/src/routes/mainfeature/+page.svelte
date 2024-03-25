@@ -8,12 +8,7 @@
     import { supabase } from "$lib/supabaseClient";
     let currentIndex = 0;
 
-    export async function load() {
-  const { data } = await supabase.from("details").select('*');
- // console.log("F1",data);
-  return {
-    details: data ?? [],
-  };
+    
 
     // Determine the direction of the transition based on the current and previous indices
     let transitionDirection = 0;
@@ -38,6 +33,14 @@
             transitionDirection = -500; // Move to the left for previous profile
         }
     }
+
+    export async function load() {
+  const { data } = await supabase.from("details").select('*');
+ // console.log("F1",data);
+  return {
+    details: data ?? [],
+  };
+  
 </script>
 
 <div class="profile-box" transition:fade>

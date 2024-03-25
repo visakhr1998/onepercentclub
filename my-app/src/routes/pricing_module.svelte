@@ -1,7 +1,7 @@
 <!-- pricing_module.svelte -->
 
 <script>
-    import { pricingPlans } from "./pricing_plans";
+    import { pricingPlans } from "./pricing/pricing_plans";
   
     export let highlightedPlanId = "";
     export let callToAction;

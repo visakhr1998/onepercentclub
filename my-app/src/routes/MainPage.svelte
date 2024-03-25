@@ -15,14 +15,19 @@
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 	import PricingModule from './pricing_module.svelte';
+    import { loginStatus } from './loginstatusstore';
+	import MainFeature from './MainFeature.svelte';
 
 // Create an event dispatcher
 const dispatch = createEventDispatcher();
 
     function navigateToRegistration() {
     // Navigate to the registration page
-    goto('/test')
+    loginStatus.set(true);
   }
+
+    const handleLogin = () => {
+      loginStatus.set(true);  };
 
   function navigateTopricing() {
     // Navigate to the registration page
@@ -55,7 +60,7 @@ const dispatch = createEventDispatcher();
                 <div class="rounded-lg overflow-hidden shadow-lg bg-gray-100 p-6">
                     <h2 class="text-xl font-semibold mb-4">Find Your Match</h2>
                     <p class="text-sm mb-4">Discover like-minded individuals who share your interests and values.</p>
-                    <button on:click={navigateToRegistration} class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">Browse Profiles</button>
+                    <button on:click={handleLogin} class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300">Browse Profiles</button>
                 </div>
                 <div class="rounded-lg overflow-hidden shadow-lg bg-gray-100 p-6">
                     <h2 class="text-xl font-semibold mb-4">Purchase premium</h2>

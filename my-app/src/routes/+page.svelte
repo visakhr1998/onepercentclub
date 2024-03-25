@@ -30,13 +30,12 @@ function handleBackToHome() {
     showAboutUs = false; // Set showFAQ to false to navigate back to the home page
   }
   </script>
-  
+
+
   <TailwindCss/>
 <Header/> <!-- Pass the toggleFAQ event handler to the Header component -->
-<MainPage/>
-<Footer />
-
-
+<MainPage/> <MainFeature details={data.details}/>
+<Footer /> <!-- Pass the toggleFAQ event handler to the Header component -->
 
 
 <style>

@@ -39,7 +39,7 @@ function handleBackToHomeClick() {
 </div>
 
 <style>
-            @tailwind base;
+    @tailwind base;
     @tailwind components;
     @tailwind utilities;
 </style>
