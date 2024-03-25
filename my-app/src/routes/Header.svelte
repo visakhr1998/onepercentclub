@@ -4,20 +4,24 @@
   import { createEventDispatcher } from 'svelte';
   import { page } from '$app/stores';
   import img from './logo.webp';
+  import { goto } from '$app/navigation';
   import { faqclick } from './faqclick';
 
   const dispatch = createEventDispatcher();
 
   function handleHomeClick() {
-    dispatch('backToHome'); // Dispatch the event to navigate back to the home page
+    goto('/')
+    // dispatch('backToHome'); // Dispatch the event to navigate back to the home page
   }
 
   function handleFAQClick() {
-    dispatch('toggleFAQ'); // Dispatch the event to navigate to the FAQ page
+    goto('/faq')
+    // dispatch('toggleFAQ'); // Dispatch the event to navigate to the FAQ page
   }
 
   function handleaboutusClick() {
-    dispatch('toggleAboutUs'); // Dispatch the event to navigate to the About Us page
+    goto('/aboutus')
+   // dispatch('toggleAboutUs'); // Dispatch the event to navigate to the About Us page
   }
 
   function handleClick() {
@@ -32,7 +36,6 @@
   </div>
   <nav class="flex items-center">
     <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mr-4" on:click={handleFAQClick}>FAQ</button>
-    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full mr-4" on:click={handleClick}>FAQ</button>
     <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full" on:click={handleaboutusClick}>About Us</button>
   </nav>
 </header>

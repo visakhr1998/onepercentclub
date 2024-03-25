@@ -3,6 +3,9 @@
 <script>
     // Function to handle navigation to FAQ page
     import { createEventDispatcher } from 'svelte';
+    import 'tailwindcss/base.css';
+    import 'tailwindcss/components.css';
+    import 'tailwindcss/utilities.css';
 
 const dispatch = createEventDispatcher();
 
@@ -34,4 +37,10 @@ function handleBackToHomeClick() {
         </div>
     </div>
 </div>
+
+<style>
+            @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+</style>
 

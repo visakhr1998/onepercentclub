@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const faqclick = writable(false);
+export const faqclick = writable(true);

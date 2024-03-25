@@ -13,25 +13,39 @@
     import Faq from './FAQ.svelte';
     import { createEventDispatcher } from 'svelte';
     import MainPage from './MainPage.svelte';
-    import PricingModule from './pricing_module.svelte';
     import AboutMe from './Aboutme.svelte';
     import RegistrationForm from './register.svelte';
     import {loginStatus} from './loginstatusstore';
-    import { faqclick } from './faqclick';
-	import Aboutme from './Aboutme.svelte';
-    const dispatch = createEventDispatcher();
-</script>
 
-{#if !faqclick}
-<Header/>
-<a href="/">Aboutme</a>
-<Footer/>
-{:else}
-<Header/>
-<a href="/about">Aboutme</a>
-<Footer/>
-{/if}
-
-  <style>
-  </style>
+function handleFAQClick() {
+  showFAQ = true;
+  showAboutUs = false;
+}
+function handleaboutusClick() {
+  showaboutus = true;
+  showFAQ = false;
+}
+function handleBackToHome() {
+    showFAQ = false;
+    showAboutUs = false; // Set showFAQ to false to navigate back to the home page
+  }
+  </script>
   
+  <TailwindCss/>
+<Header/> <!-- Pass the toggleFAQ event handler to the Header component -->
+<MainPage/>
+<Footer />
+
+
+
+
+<style>
+  .swipe-holder{
+    height: 30vh;
+    width: 100%;
+  }
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+</style>
